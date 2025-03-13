@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class OpenGate : MonoBehaviour
 {
@@ -14,9 +15,7 @@ public class OpenGate : MonoBehaviour
     {
         if (other.name == "Crate")
         {
-            Debug.Log(other.name);
-            Debug.Log(gate.name);
-            Destroy(gate);
+            gate.transform.rotation = Quaternion.Euler(transform.rotation.x, 90, transform.rotation.z);
         }
     }
 }
